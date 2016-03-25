@@ -1,0 +1,25 @@
+{
+  "name": "subzeta/glosbe",
+  "description": "API wrapper for Glosbe translator",
+  "homepage": "https://github.com/subzeta/glosbe",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "subzeta\\Glosbe\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sergio Cadu",
+      "role": "Developer",
+      "email": "subzeta@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "lib-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.2"
+  }
+}
