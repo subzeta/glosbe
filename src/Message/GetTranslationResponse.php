@@ -86,11 +86,11 @@ class GetTranslationResponse extends Response
         if (isset($this->response->tuc)) {
             foreach ($this->response->tuc as $translation) {
                 if (isset($translation->phrase)) {
-                    $this->translations[] = $translation->phrase->text;
+                    $this->translations[] = $this->sanitize($translation->phrase->text);
                 }
                 if (isset($translation->meanings)) {
                     foreach ($translation->meanings as $meaning) {
-                        $this->meanings[] = $meaning->text;
+                        $this->meanings[] = $this->sanitize($meaning->text);
                     }
                 }
             }
@@ -98,8 +98,18 @@ class GetTranslationResponse extends Response
 
         if (isset($this->response->examples)) {
             foreach ($this->response->examples as $example) {
-                $this->examples[] = $example->second;
+                $this->examples[] = $this->sanitize($example->second);
             }
         }
+    }
+
+    /**
+     * @param string $text
+     *
+     * @return string
+     */
+    private function sanitize($text)
+    {
+        return strip_tags(utf8_decode($text));
     }
 }

@@ -48,11 +48,10 @@ var_dump($response->examples());
 
 ## To do
 
-* Interface-it-all man.
 * Detect a bad formatted language ISO code (specially ISO 639-1) and translate to its 639-3 equivalent. As Glosbe points out, the API may understand a two letter code but it's better to provide it as the API expects it.  
 * Support for multi-translations (more than one text) and more than one translatable-language (more than one "to"). By now Glosbe doesn't support it.
 * Add the addTranslation method, request and response.
-* Limit the number of translations during on response build (an option for that would be nice).
+* Limit the number of translations on response build (an option for that would be nice).
  
 ## License
 

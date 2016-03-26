@@ -28,8 +28,8 @@ abstract class Request
     {
         $curl = curl_init($this->build());
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($curl);
+        curl_setopt($curl, CURLOPT_ENCODING, '');
 
-        return $this->response($response);
+        return $this->response(curl_exec($curl));
     }
 }
